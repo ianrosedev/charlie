@@ -14,13 +14,9 @@ var client = new twitter({
 	access_token_secret: '2qYDyXUJaeCiUk4lVK44lpJxx6AnZ3S037aXJt8lybfN2'
 });
 
-var x;
-
 client.stream('statuses/filter', {track: 'north carolina'}, function(stream) {
   stream.on('data', function(tweet) {
-    console.log(tweet.text);
-    // Need AJAX var x = tweet.text;
-    // return x;
+    console.log(tweet.user.name + '-->', tweet.text);
   });
  
   stream.on('error', function(error) {
@@ -30,8 +26,6 @@ client.stream('statuses/filter', {track: 'north carolina'}, function(stream) {
 
 app.get('/',function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
-  //Need AJAX res.send(JSON.stringify(x));
-  //__dirname : It will resolve to your project folder.
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
