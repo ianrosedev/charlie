@@ -14,9 +14,9 @@ var client = new twitter({
 	access_token_secret: '2qYDyXUJaeCiUk4lVK44lpJxx6AnZ3S037aXJt8lybfN2'
 });
 
-client.stream('statuses/filter', {track: 'north carolina'}, function(stream) {
+client.stream('statuses/filter', {track: '@altonbrown'}, function(stream) {
   stream.on('data', function(tweet) {
-    console.log(tweet.user.name + '-->', tweet.text);
+    console.log(tweet.user.name + ' --> ', tweet.text);
   });
  
   stream.on('error', function(error) {
@@ -24,7 +24,7 @@ client.stream('statuses/filter', {track: 'north carolina'}, function(stream) {
   });
 });
 
-app.get('/',function(req, res){
+app.get('/', function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
