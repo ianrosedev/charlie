@@ -31,3 +31,41 @@ app.listen(app.get('port'), function() {
              app.get('port'));
 });
 
+/*//Twitter API
+var twitter = require('twitter');
+var client = new twitter({
+	consumer_key: 'UUGfWBPmsOHM4AyXuhRpuPC1Z',
+	consumer_secret: 'uvMVDSYfBHjCZXmGm0cDebxjh4qQ3MslxMSCCKyXo4UnBhWwQR',
+	access_token_key: '2836153652-06sjKMgdoLVMHRs6eREYiLpFWJGWmqghPCz9uON',
+	access_token_secret: '2qYDyXUJaeCiUk4lVK44lpJxx6AnZ3S037aXJt8lybfN2'
+});
+
+client.stream('statuses/filter', {track: '@SFGiants'}, function(stream) {
+  stream.on('data', function(tweet) {
+    console.log(tweet.user.name + ' --> ', tweet.text);
+  });
+ 
+  stream.on('error', function(error) {
+    throw error;
+  });
+}); */
+
+/*
+//Yelp API
+var Yelp = require('yelp');
+var yelp = new Yelp({
+  consumer_key: 'a1DR6z99oBjRl6lLboB-_A',
+  consumer_secret: 'o7XrLbHRmgHZpNL8IUdkWBVFHBU',
+  token: 'Oc13JBYgBwiXzf48mQ83jkNT8p3bA3YI',
+  token_secret: '1-tCgpafThuXNmQUuHFVvmBrVFI',
+});
+
+// See http://www.yelp.com/developers/documentation/v2/search_api
+yelp.search({term: 'nachos', location: 'durham'})
+.then(function (data) {
+  console.log(data);
+})
+.catch(function (err) {
+  console.error(err);
+});
+*/
