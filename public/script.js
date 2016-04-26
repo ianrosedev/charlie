@@ -10,8 +10,8 @@ $(function() {
       var icon = data.current_observation.icon_url;
       
       // Display location and temp in F on page 
-      $('#location').text('Hello ' + location);
-      $('#temp-degree').text(temp_f);
+      $('#location').html('Hello ' + location);
+      $('#temp-degree').html(temp_f + '&deg;');
       $('#temp-icon').html('<img src="' + icon + '"></img>');
     }
   });
